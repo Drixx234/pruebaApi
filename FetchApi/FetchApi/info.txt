@@ -1,0 +1,29 @@
+https://retoolapi.dev/Z2SnCg/data
+See all available endpoints here (generated with json-server).
+Endpoint URL
+
+HTTP method endpoints
+
+GET
+/Z2SnCg/data
+
+GET filter
+/Z2SnCg/data?Nombre=value
+
+GET by id
+/Z2SnCg/data/1
+
+GET paginate
+/Z2SnCg/data?_page=2&_limit=10
+
+POST
+/Z2SnCg/data
+
+PUT
+/Z2SnCg/data/1
+
+PATCH
+/Z2SnCg/data/1
+
+DELETE
+/Z2SnCg/data/1
