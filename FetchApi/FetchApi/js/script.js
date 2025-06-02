@@ -36,5 +36,56 @@ function mostrardatos(datos){
     });
 }
 
+
 //llamada inicial para que se carguen los datos que viene del servidor
 ObtenerPersonas();
+
+const modal = document.getElementById("modal-agregar")
+const btnAgregar = document.getElementById("btnAbrirModal")
+const btncerrar = document.getElementById("btnCerrarModal")
+
+btnAgregar.addEventListener("click", () => {
+    modal.showModal();
+});
+
+btncerrar.addEventListener("click", () => {
+    modal.close();
+});
+
+//agregar nuevo integrante desde el furmulario
+document,getElementById("frmAgregar").addEventListener("submit", async e => {
+    e.preventDefault();
+
+    const nombre = document.getElementById("nombre").ariaValueMax.trim();
+    const apellido = document.getElementById("apellido").ariaValueMax.trim();
+    const email = document.getElementById("email").ariaValueMax.trim();
+    const edad = document.getElementById("edad").ariaValueMax.trim();
+    
+    if(!nombre || !apellido || !email || !edad){
+        alert("complete todos los campos");
+        return;
+    };
+
+    const respuesta = await fetch(API_URL, {
+        method: "POST",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({nombre, apellido, email, edad})
+    });
+
+    if(respuesta.ok){
+        alert("el registro fue agregdo correctamente")
+
+        //limpieza y cierre
+        
+        modal.reset();
+        modal.close();
+
+        //recargar tabla
+
+        ObtenerPersonas();
+    }
+    else{
+        alert("hubo un error al agregar")
+    }
+
+});

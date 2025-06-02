@@ -1,0 +1,25 @@
+
+
+
+.add-button{
+    position: fixed; /*el boton queda flotante*/
+    bottom: 30px; /*separacion de 20 pixeles*/
+    right: 30px; /*desde la derecha, 25 pixeles*/
+    background-color: cadetblue; /*color del boton*/
+    color: white; /*color del icono*/
+    border: none; /*bordes*/
+    border-radius: 100%; /*qure tan circular es*/
+    width: 70px;
+    height: 70px; /*para wue qede mas centrado*/
+    box-shadow: 0 4px 10px rgb(0, 0, 0, 0.5); /*sombra*/
+    display: flex;
+    justify-content: center;/*aliniacion horizonal*/
+    align-items: center; /*aliniacion vertical*/
+
+    transition: transform 0.4s; /*animacion*/
+    z-index: 1001; /*para que el boton siemore quede encima de todo*/
+}
+
+.add-button:hover {
+    transform: scale(1.1); /*para que el boton crezca*/
+}
